@@ -73,6 +73,52 @@ echo -e "\n---- Create Log directory ----"
 sudo mkdir /var/log/$OE_USER
 sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 
+echo -e "\n----  oca reports ----"
+sudo pip install xlwt
+
+echo -e "\n---- odoo kineses ----"
+sudo pip install xlrd
+
+echo -e "\n---- oca partner contacts ----"
+sudo pip install unicodecsv
+
+echo -e "\n---- aeroo direct print ----"
+sudo apt-get install -y libcups2-dev
+sudo pip install git+https://github.com/aeroo/aeroolib.git@master
+sudo pip install pycups==1.9.68
+
+echo -e "\n---- akretion/odoo-usability ----"
+sudo pip install BeautifulSoup4
+
+echo -e "\n---- OCA knowledge ----"
+sudo pip install python-magic
+
+echo -e "\n---- odoo support ----"
+sudo pip install erppeek
+
+echo -e "\n---- Workers and longpolling dependencies ----"
+sudo apt-get install -y python-gevent
+sudo pip install psycogreen
+
+echo -e "\n---- used by many pip packages ----"
+sudo apt-get install -y python-dev
+
+echo -e "\n---- odoo-extra ----"
+sudo apt-get install -y python-matplotlib font-manager
+
+echo -e "\n---- to be removed when we remove crypto ----"
+sudo apt-get install -y swig libssl-dev
+sudo pip install M2Crypto suds
+
+echo -e "\n---- odoo argentina (nuevo modulo de FE) ----"
+sudo apt-get install -y swig libffi-dev libssl-dev python-m2crypto python-httplib2 mercurial
+sudo pip install geopy==0.95.1 BeautifulSoup pyOpenSSL suds
+sudo hg clone https://code.google.com/p/pyafipws
+sudo cd pyafipws/
+sudo pip install -r requirements.txt
+sudo python setup.py install
+sudo chmod 777 -R /usr/local/lib/python2.7/dist-packages/pyafipws/
+
 #--------------------------------------------------
 # Install ODOO
 #--------------------------------------------------
