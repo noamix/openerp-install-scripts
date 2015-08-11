@@ -73,9 +73,6 @@ echo -e "\n---- Create Log directory ----"
 sudo mkdir /var/log/$OE_USER
 sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 
-echo -e "\n----  oca reports ----"
-sudo pip install xlwt
-
 echo -e "\n---- odoo kineses ----"
 sudo pip install xlrd
 
@@ -114,10 +111,11 @@ echo -e "\n---- odoo argentina (nuevo modulo de FE) ----"
 sudo apt-get install -y swig libffi-dev libssl-dev python-m2crypto python-httplib2 mercurial
 sudo pip install geopy==0.95.1 BeautifulSoup pyOpenSSL suds
 sudo hg clone https://code.google.com/p/pyafipws
-sudo cd pyafipws/
+sudo cd ~/pyafipws/
 sudo pip install -r requirements.txt
 sudo python setup.py install
 sudo chmod 777 -R /usr/local/lib/python2.7/dist-packages/pyafipws/
+sudo cd
 
 #--------------------------------------------------
 # Install ODOO
