@@ -110,12 +110,6 @@ sudo pip install M2Crypto suds
 echo -e "\n---- odoo argentina (nuevo modulo de FE) ----"
 sudo apt-get install -y swig libffi-dev libssl-dev python-m2crypto python-httplib2 mercurial
 sudo pip install geopy==0.95.1 BeautifulSoup pyOpenSSL suds
-sudo hg clone https://code.google.com/p/pyafipws
-sudo cd ~/pyafipws/
-sudo pip install -r requirements.txt
-sudo python setup.py install
-sudo chmod 777 -R /usr/local/lib/python2.7/dist-packages/pyafipws/
-sudo cd
 
 #--------------------------------------------------
 # Install ODOO
